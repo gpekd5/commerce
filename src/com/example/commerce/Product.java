@@ -1,5 +1,9 @@
 package com.example.commerce;
 
+/**
+ * 상품 정보를 나타내는 클래스
+ *
+ */
 public class Product {
 
     //속성
@@ -31,5 +35,9 @@ public class Product {
 
     public int getStock() {
         return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 }

@@ -18,6 +18,7 @@ public class CommerceSystem {
     int selectedAddNo;
 
     private final Cart cart = new Cart();
+    private final Admin admin = new Admin(categories, cart);
 
     public CommerceSystem() {
         initData();
@@ -68,6 +69,7 @@ public class CommerceSystem {
             }
 
             System.out.printf("0. %-10s | %s%n", "종료", "프로그램 종료");
+            System.out.println("6. 관리자 모드");
 
             if (!cart.isEmpty()) {
                 System.out.println();
@@ -83,6 +85,9 @@ public class CommerceSystem {
                     System.out.println();
                     System.out.println("커머스 플랫폼을 종료합니다.");
                     break;
+                } else if (selectCategoryNo == 6) {
+                    admin.adminLogin(categories);
+                    continue;
                 } else if (selectCategoryNo < 1 || selectCategoryNo > categories.size()) {
 
                     if (!cart.isEmpty()) {

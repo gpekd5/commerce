@@ -7,9 +7,9 @@ package com.example.commerce;
 public class Product {
 
     //속성
-    private final String productName;
-    private final int price;
-    private final String description;
+    private String productName;
+    private int price;
+    private String description;
     private int stock;
 
     //속성
@@ -35,6 +35,18 @@ public class Product {
 
     public int getStock() {
         return stock;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setStock(int stock) {

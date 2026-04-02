@@ -40,7 +40,7 @@ public class Cart {
             System.out.println("재고가 부족합니다!!!!");
             return;
         }
-        //리스트 전체를 반복하여 입력받은 항목과 일치하는 항목이 있으면 수량 up, 그렇지 않으면 신규 항목 리스트에 추가
+
         for (CartItem item : cartItems) {
             int quantity = item.getQuantity();
             if (stock <= quantity) {
@@ -116,5 +116,25 @@ public class Cart {
                     stock, updateStock);
         }
         cartItems.clear();
+    }
+
+
+    /**
+     * 입력받은 상품을 장바구니 리스트에서 삭제하는 기능
+     *
+     * @param product 입력받은 상품
+     */
+    public void deleteProduct(Product product){
+        System.out.println("deleteProduct 호출됨");
+        System.out.println("cartItems 크기: " + cartItems.size());
+        for (int i = 0; i < cartItems.size(); i++){
+            CartItem item = cartItems.get(i);
+
+            if (item.getProduct() == product){
+                cartItems.remove(i);
+                System.out.println(product.getProductName() + "가 장바구니에서 삭제되었습니다.");
+                return;
+            }
+        }
     }
 }
